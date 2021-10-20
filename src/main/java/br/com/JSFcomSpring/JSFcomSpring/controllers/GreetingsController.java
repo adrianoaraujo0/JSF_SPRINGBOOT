@@ -15,22 +15,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.Empresa;
-import repository.EmpresaRepository;
+import br.com.JSFcomSpring.JSFcomSpring.model.Empresa;
+import br.com.JSFcomSpring.JSFcomSpring.repository.EmpresaRepository;
 
 @RestController
-@RequestMapping("/controlador")
 public class GreetingsController {
 
-	private EmpresaRepository empresaRepository;
+	@Autowired
+	EmpresaRepository empresaRepository;
 
-	
 	@RequestMapping("/OlaMundo")
 	public String OlaMundo() {
 		return "Hello World!";
 	}
 
-	
 	// ****METODO PARA PERSISTIR****
 	@PutMapping(value = "cadastrar")
 	@ResponseBody
@@ -41,16 +39,14 @@ public class GreetingsController {
 		return new ResponseEntity<Empresa>(emp, HttpStatus.CREATED);
 
 	}
-	
+
 	@GetMapping(value = "mostrarListar")
 	@ResponseBody
-	public ResponseEntity<List<Empresa>> listar(){
-		
+	public ResponseEntity<List<Empresa>> listar() {
+
 		List<Empresa> ListaEmpresa = empresaRepository.findAll();
-		
+
 		return new ResponseEntity<List<Empresa>>(ListaEmpresa, HttpStatus.OK);
-		
 	}
-	
 
 }

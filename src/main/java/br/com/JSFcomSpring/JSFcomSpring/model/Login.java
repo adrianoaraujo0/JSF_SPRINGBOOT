@@ -1,7 +1,8 @@
-package model;
+package br.com.JSFcomSpring.JSFcomSpring.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,35 +14,35 @@ public class Login {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idLogin;
-	
+	private Long id;
+
 	@Column(length = 50, nullable = false)
-	private String nomeLogin;
-	
+	private String nome;
+
 	@Column(unique = true, length = 50, nullable = false)
 	private String email;
-	
+
 	@Column(unique = true, length = 30, nullable = false)
 	private String senha;
-	
-	@ManyToOne
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(unique = true)
 	private Empresa empresa;
 
-	public Long getIdLogin() {
-		return idLogin;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdLogin(Long idLogin) {
-		this.idLogin = idLogin;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getNomeLogin() {
-		return nomeLogin;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomeLogin(String nomeLogin) {
-		this.nomeLogin = nomeLogin;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
@@ -67,12 +68,5 @@ public class Login {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

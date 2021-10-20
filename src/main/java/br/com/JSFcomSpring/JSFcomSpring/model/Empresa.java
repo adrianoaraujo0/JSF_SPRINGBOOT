@@ -1,4 +1,4 @@
-package model;
+package br.com.JSFcomSpring.JSFcomSpring.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,17 +11,17 @@ public class Empresa {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idEmpresa;
+	private Long id;
 	private String nomeEmpresa;
 	private Boolean Status;
 	
 
-	public Long getIdEmpresa() {
-		return idEmpresa;
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdEmpresa(Long idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNomeEmpresa() {
