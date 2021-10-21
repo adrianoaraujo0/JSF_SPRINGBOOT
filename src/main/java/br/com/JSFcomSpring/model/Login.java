@@ -1,4 +1,4 @@
-package br.com.JSFcomSpring.JSFcomSpring.model;
+package br.com.JSFcomSpring.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

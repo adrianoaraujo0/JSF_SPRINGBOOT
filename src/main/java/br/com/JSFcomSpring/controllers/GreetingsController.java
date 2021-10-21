@@ -1,4 +1,4 @@
-package br.com.JSFcomSpring.JSFcomSpring.controllers;
+package br.com.JSFcomSpring.controllers;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.JSFcomSpring.JSFcomSpring.model.Empresa;
-import br.com.JSFcomSpring.JSFcomSpring.repository.EmpresaRepository;
+import br.com.JSFcomSpring.model.Empresa;
+import br.com.JSFcomSpring.repository.EmpresaRepository;
 
 @RestController
 public class GreetingsController {
